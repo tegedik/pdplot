@@ -39,7 +39,7 @@ shape1, shape2, type=c("normal", "logistic", "binomial", "chi-square",
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
+%}
 \references{
 R Core Team (2020). R: A language and environment for statistical computing. R Foundation
   for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.}
