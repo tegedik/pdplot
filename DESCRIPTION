@@ -1,10 +1,10 @@
 Package: pdplot
 Type: Package
-Title: Plotting Probability Density (Mass) Functions
+Title: Plotting Probability Density/Mass Functions
 Version: 0.0.1
 Author: Tahir Enes Gedik
 Maintainer: Tahir Enes Gedik <tegedik@gmail.com>
-Description: This package provides `pd_plot` function which visualizes probability density (mass) functions in base `R`.
+Description: This package provides `pd_plot` function which visualizes probability density/mass functions in base `R`.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

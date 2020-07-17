@@ -1,7 +1,7 @@
 \name{pd_plot}
 \alias{pd_plot}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Plotting Probability Density (Mass) Functions
+\title{Plotting Probability Density/Mass Functions
 %%  ~~function to do ... ~~
 }
 \description{
