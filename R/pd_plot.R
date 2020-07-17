@@ -6,13 +6,15 @@ pd_plot <- function(x = seq(...),
                       size = NULL, 
                       prob = NULL, 
                       df=NULL, 
+                      df1=NULL,
+                      df2=NULL,
                       lambda=NULL,
                       rate=NULL, 
                       shape=NULL,
                       shape1=NULL,
                       shape2=NULL,
                       lines = FALSE,
-                      type = c("normal", "logistic", "binomial", "chi-square", "poisson", "exponential", "cauchy", "beta", "gamma", "geometric")) {
+                      type = c("normal", "logistic", "binomial", "chi-square", "poisson", "exponential", "cauchy", "beta", "gamma", "geometric", "Student's t", "F")) {
 dark_highlight <- c("#7C0000")
 # Normal Distribution  
 labels <- c()
@@ -265,6 +267,56 @@ labels <- c()
       a <- prob
      #b <- rate
       labels <- bquote(p~ .("=")~ .(a))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=2, cex = 0.75)
+    }
+# Student t    
+  } else if (type == "Student's t") {
+    if(lines == FALSE){
+      plot(
+        x = x, dt(x, df=df), 
+        type = "l", lty = 1, lwd=2, col=dark_highlight,
+        ylab = "Probability Mass", xlab = "", main = "Student's t Distribution"
+      ) 
+      a <- df
+      #b <- rate
+      labels <- bquote(nu~ .("=")~ .(a))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=1, lwd=2, cex = 0.75)
+    } else {
+      lines(
+        x = x, dt(x, df=df), 
+        type = "l", lty = 2, lwd=1,
+        ylab = "Probability Mass", xlab = "", main = "Student's t Distribution"
+      )
+      a <- df
+      #b <- rate
+      labels <- bquote(nu~ .("=")~ .(a))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=2, cex = 0.75)
+    }
+# F    
+  } else if (type == "F") {
+    if(lines == FALSE){
+      plot(
+        x = x, df(x, df1=df1, df2=df2), 
+        type = "l", lty = 1, lwd=2, col=dark_highlight,
+        ylab = "Probability Mass", xlab = "", main = "F Distribution"
+      ) 
+      a <- df1
+      b <- df2
+      labels <- bquote(d[1]~ .("=")~ .(a)~ .(",")~ d[2]~ .("=")~ .(b))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=1, lwd=2, cex = 0.75)
+    } else {
+      lines(
+        x = x, df(x, df1=df1, df2=df2), 
+        type = "l", lty = 2, lwd=1,
+        ylab = "Probability Mass", xlab = "", main = "F Distribution"
+      )
+      a <- df1
+      b <- df2
+      labels <- bquote(d[1]~ .("=")~ .(a)~ .(",")~ d[2]~ .("=")~ .(b))
       legend("topright", inset=.02, title="Last Distribution",
              legend= labels, lty=2, cex = 0.75)
     }

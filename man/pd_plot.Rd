@@ -10,9 +10,8 @@
 
 }
 \usage{
-pd_plot(x, mean, sd, location, scale, size, prob, df, lambda, rate, shape, 
-shape1, shape2, type=c("normal", "logistic", "binomial", "chi-square", 
-"poisson", "exponential", "cauchy", "beta"), lines=FALSE)
+pd_plot(x, mean, sd, location, scale, size, prob, df, df1, df2, lambda, rate, shape, 
+shape1, shape2, type=c("normal", "logistic", "binomial", "chi-square", "poisson", "exponential", "cauchy", "beta", "gamma", "geometric", "Student's t", "F"), lines=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +25,7 @@ shape1, shape2, type=c("normal", "logistic", "binomial", "chi-square",
 \item{size}{number of trials (zero or more).}
 \item{prob}{probability of success on each trial.}
 \item{df}{degrees of freedom (non-negative, but can be non-integer).}
+\item{df1, df2}{degrees of freedom. \code{Inf} allowed.}
 \item{lambda}{vector of (non-negative) means.}
 \item{rate}{vector of rates.}
 \item{shape}{shape parameter.}
