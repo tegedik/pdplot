@@ -223,21 +223,3 @@ labels <- c()
 
 # end
 }
-
-
-# Using lapply or map
-#pd_plot(seq(-10,10,0.01), mean=0, sd=1, type="normal")
-#rep_func <- function(sd){pd_plot(seq(-10,10,0.01), mean=0, sd=sd, type="normal", lines=TRUE)}
-#y <- c(2:4)
-#purrr:map(y, rep_func)
-#lapply(y, rep_func)
-
-
-#pd_plot(seq(0:20), lambda = 7,type = "poisson")
-#rep_func <- function(lmbd){pd_plot(seq(0:20), lambda = lmbd,type = "poisson", lines=TRUE)}
-#y <- c(8:10)
-#lapply(y, rep_func)
-
-
-# Change line color and size on legend
-# check extraDistr
