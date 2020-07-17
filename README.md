@@ -11,7 +11,7 @@ devtools::install_github("tegedik/pdplot")
 
 ## Usage
 
-`pd_plot` follows the convention of density distributions in `R`. First you need to create a vector of quantiles or pass it as the first argument in the function. Then, you need to select the correct parameter(s) for each distribution. Finally, you need to enter the `type` of the distribution. Here is an example with normal distribution.
+`pd_plot` follows the convention of density distributions in `R`. First you need to create a vector of quantiles or pass it as the first argument in the function. Then, you need to select the correct parameter(s) for each distribution. Finally, you need to enter the `type` of the distribution. Here is an example with normal distribution,
 
 ``` r
 pd_plot(seq(-4, 4, 0.01), mean=0, sd=1, type="normal")
@@ -35,7 +35,7 @@ pd_plot(0:25, size=30, prob=0.5, type="binomial", lines=TRUE)
 ```
 ![](man/figures/binomial.png)
 
-Again, you need to pick the right arguments for the parameter values: in this case, `size` and `prob`.
+Again, you need to pick right arguments for the parameter values: in this case, `size` and `prob`.
 Although the code is not very efficient and scalable at this point, you can use with `apply` family functions or `purrr:map`.
 
 ``` r
