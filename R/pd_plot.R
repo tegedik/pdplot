@@ -276,7 +276,7 @@ labels <- c()
       plot(
         x = x, dt(x, df=df), 
         type = "l", lty = 1, lwd=2, col=dark_highlight,
-        ylab = "Probability Mass", xlab = "", main = "Student's t Distribution"
+        ylab = "Probability Density", xlab = "", main = "Student's t Distribution"
       ) 
       a <- df
       #b <- rate
@@ -287,7 +287,7 @@ labels <- c()
       lines(
         x = x, dt(x, df=df), 
         type = "l", lty = 2, lwd=1,
-        ylab = "Probability Mass", xlab = "", main = "Student's t Distribution"
+        ylab = "Probability Density", xlab = "", main = "Student's t Distribution"
       )
       a <- df
       #b <- rate
@@ -301,7 +301,7 @@ labels <- c()
       plot(
         x = x, df(x, df1=df1, df2=df2), 
         type = "l", lty = 1, lwd=2, col=dark_highlight,
-        ylab = "Probability Mass", xlab = "", main = "F Distribution"
+        ylab = "Probability Density", xlab = "", main = "F Distribution"
       ) 
       a <- df1
       b <- df2
@@ -312,7 +312,7 @@ labels <- c()
       lines(
         x = x, df(x, df1=df1, df2=df2), 
         type = "l", lty = 2, lwd=1,
-        ylab = "Probability Mass", xlab = "", main = "F Distribution"
+        ylab = "Probability Density", xlab = "", main = "F Distribution"
       )
       a <- df1
       b <- df2
