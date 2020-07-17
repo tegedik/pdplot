@@ -12,7 +12,7 @@ pd_plot <- function(x = seq(...),
                       shape1=NULL,
                       shape2=NULL,
                       lines = FALSE,
-                      type = c("normal", "logistic", "binomial", "chi-square", "poisson", "exponential", "cauchy", "beta")) {
+                      type = c("normal", "logistic", "binomial", "chi-square", "poisson", "exponential", "cauchy", "beta", "gamma", "geometric")) {
 dark_highlight <- c("#7C0000")
 # Normal Distribution  
 labels <- c()
@@ -215,6 +215,56 @@ labels <- c()
       a <- shape1
       b <- shape2
       labels <- bquote(alpha~ .("=")~ .(a)~ .(",")~ beta~ .("=")~ .(b))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=2, cex = 0.75)
+    }
+# gamma    
+  } else if (type == "gamma") {
+    if(lines == FALSE){
+      plot(
+        x = x, dgamma(x, shape=shape, scale=scale), 
+        type = "l", lty = 1, lwd=2, col=dark_highlight,
+        ylab = "Probability Density", xlab = "x", main = "Gamma Distribution"
+      ) 
+      a <- shape
+      b <- scale
+      labels <- bquote(k~ .("=")~ .(a)~ .(",")~ theta~ .("=")~ .(b))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=1, cex = 0.75)
+    } else {
+      lines(
+        x = x, dgamma(x, shape=shape, scale=scale), 
+        type = "l", lty = 2, lwd=2,
+        ylab = "Probability Density", xlab = "x", main = "Gamma Distribution"
+      )
+      a <- shape
+      b <- scale
+      labels <- bquote(k~ .("=")~ .(a)~ .(",")~ theta~ .("=")~ .(b))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=2, cex = 0.75)
+    }
+# geometric    
+  } else if (type == "geometric") {
+    if(lines == FALSE){
+      plot(
+        x = x, dgeom(x, prob=prob), 
+        type = "b", lty = 1, lwd=2, col=dark_highlight,
+        ylab = "Probability Mass", xlab = "x", main = "Geometric Distribution"
+      ) 
+      a <- prob
+      #b <- rate
+      labels <- bquote(p~ .("=")~ .(a))
+      legend("topright", inset=.02, title="Last Distribution",
+             legend= labels, lty=1, cex = 0.75)
+    } else {
+      lines(
+        x = x, dgeom(x, prob=prob), 
+        type = "b", lty = 2, lwd=2,
+        ylab = "Probability Mass", xlab = "x", main = "Geometric Distribution"
+      )
+      a <- prob
+     #b <- rate
+      labels <- bquote(p~ .("=")~ .(a))
       legend("topright", inset=.02, title="Last Distribution",
              legend= labels, lty=2, cex = 0.75)
     }
