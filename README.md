@@ -17,6 +17,8 @@ devtools::install_github("tegedik/pdplot")
 pd_plot(seq(-4, 4, 0.01), mean=0, sd=1, type="normal")
 ```
 
+![](man/figures/normal.png)
+
 This will create a normal probability distribution with `mean` 0 and `sd` 1. After calling this function, you can also overlay other density curves using `lines` argument. For example,
 
 ``` r
