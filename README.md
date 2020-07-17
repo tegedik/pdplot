@@ -40,7 +40,7 @@ Although the code is not very efficient and scalable at this point, you can use 
 
 ``` r
 pd_plot(0:20, lambda=6, type="poisson")
-rep_func <- function(rep){pd_plot(0:40, lambda=rep, type="poisson", lines=TRUE)}
+rep_func <- function(rep){pd_plot(0:20, lambda=rep, type="poisson", lines=TRUE)}
 rep <- 7:10
 lapply(rep, rep_func)
 ```
